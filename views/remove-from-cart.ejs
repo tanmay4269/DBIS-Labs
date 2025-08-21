@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remove from Cart</title>
+</head>
+<body>
+  
+    <h1>Remove from Cart</h1>
+    <a href="/dashboard">Dashboard</a>
+    <br><br>
+
+    <form action="" method="post">
+        <label for="product_id">Product ID:</label>
+        <input type="number" id="product_id" name="product_id" placeholder="Enter Product ID">
+        <br><br>
+        <input type="submit" id='submit_button' value="Remove from Cart">
+    </form> 
+
+    <% if (typeof success !== 'undefined') { %>
+      <% if (success === true) { %>
+        <p style="color: green;">Item was successfully removed from cart!</p>
+      <% } else if (success === false) { %>
+        <p style="color: red;">Failed to remove item from cart. Please try again.</p>
+      <% } %>
+    <% } %>
+    
+</body>
+</html>

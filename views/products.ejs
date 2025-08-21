@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product List</title>
+</head>
+<body>
+  
+    <h1>Available Products</h1>
+    <a href="/dashboard">Dashboard</a>
+
+    <table>
+        <tr>
+            <th>Product ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Stock Quantity</th>
+        </tr>
+        
+        <% for (var i = 0; i < products.length; i++) { %>
+            <tr>
+            <td><%= products[i].product_id %></td>
+            <td><%= products[i].name %></td>
+            <td><%= products[i].price %></td>
+            <td><%= products[i].stock_quantity %></td>
+            </tr>    
+        <% } %>
+    </table>
+
+</body>
+</html>

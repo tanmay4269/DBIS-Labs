@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmation</title>
+</head>
+<body>
+  
+    <h1>Order Confirmation</h1>
+    <a href="/dashboard">Dashboard</a>
+
+    <% if (typeof order_id === 'undefined') { %>
+        <p>No order details found.</p>
+    <% } else { %>
+        <h2>Order Details</h2>
+        <p>Order ID: <%= order_id %></p>
+        <p>Order Date: <%= order_date %></p>
+
+        <table>
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total Price</th>
+            </tr>
+            
+            <% orders.forEach(function(item) { %>
+                <tr>
+                    <td><%= item.product_id %></td>
+                    <td><%= item.name %></td>
+                    <td><%= item.quantity %></td>
+                    <td>$<%= Number(item.price).toFixed(2) %></td>
+                    <td>$<%= Number(item.total_price).toFixed(2) %></td>
+                </tr>    
+            <% }); %>
+        </table>
+
+        <h3>Total Amount: $<%= Number(total_amount).toFixed(2) %></h3>
+        <p>Thank you for your order!</p>
+    <% } %>    
+</body>
+</html>

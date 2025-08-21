@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add to Cart</title>
+</head>
+<body>
+  
+    <h1>Add to Cart</h1>
+    <a href="/dashboard">Dashboard</a>
+    <br><br>
+
+    <form action="" method="post">
+        <label for="product_id">Product ID:</label>
+        <input type="number" id="product_id" name="product_id" placeholder="Enter Product ID">
+        <br>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" placeholder="Enter Quantity">
+        <br>
+        <br>
+        <input type="submit" id='submit_button' value="Add to Cart">
+    </form> 
+
+    <% if (typeof success !== 'undefined') { %>
+      <% if (success === true) { %>
+        <p style="color: green;">Last item was successfully added to your cart!</p>
+      <% } else if (success === false) { %>
+        <% if (typeof insufficient_stock !== 'undefined') { %>
+          <% if (insufficient_stock === true) { %>
+            <p style="color: green;">Last item was successfully added to your cart!</p>
+          <% } %>
+        <% } else { %>
+          <p style="color: red;">Failed to add the last item to your cart. Please try again.</p>
+        <% } %>
+      <% } %>
+    <% } %>
+
+    
+</body>
+</html>

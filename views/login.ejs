@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <p>Don't have an acount? <a href="/signup">Sign-Up here</a></p>
+    <br>
+    <form action="" method="post">
+        <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            placeholder="email" 
+            value="tanmay4269@gmail.com" 
+            required
+        >
+        <br>
+        <input 
+            type="password" 
+            id="password" 
+            name="password" 
+            placeholder="password" 
+            value="Hello@123" 
+            required
+        >
+        <br>
+        <br>
+        <input type="submit" id='submit_button' value="Submit">
+    </form> 
+
+    <% if (typeof invalid_account !== 'undefined') { %>
+        <% if (invalid_account) { %>
+            <p style="color: red;">This account doesn't exist. Try again or <a href="/signup">Sign-Up here</a></p>
+        <% } %>
+    <% } %>
+
+    <% if (typeof invalid_account !== 'undefined') { %>
+        <% if (invalid_password) { %>
+            <p style="color: red;">Incorrect password. Try again.</p>
+        <% } %>
+    <% } %>
+
+  
+</body>
+</html>

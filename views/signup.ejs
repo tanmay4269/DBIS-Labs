@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign-Up</title>
+</head>
+<body>
+
+  <p>Already have an account? <a href="/login">Login here</a></p>
+  <br>
+  <form action="" method="post">
+    <div style="display: flex; align-items: center;">
+      <input 
+        type="text" 
+        id="username" 
+        name="username" 
+        placeholder="username" 
+        value="tanmay4269" 
+        required
+        style="margin-right: 10px;"
+      > 
+      <% if (typeof retry_username !== 'undefined') { %>
+        <% if (retry_username === true) { %>
+          <p style="color: red; margin: 0;">Username is already in use, try a different one or login instead.</p>
+        <% } %>
+      <% } %>
+    </div>
+    
+    
+    <div style="display: flex; align-items: center;">
+      <input 
+        type="email" 
+        id="email" 
+        name="email" 
+        placeholder="email" 
+        value="tanmay4269@gmail.com" 
+        required
+        style="margin-right: 10px;"
+      >
+      <% if (typeof retry_email !== 'undefined') { %>
+        <% if (retry_email === true) { %>
+          <p style="color: red; margin: 0;">Email is already in use, try a different one or login instead.</p>
+        <% } %>
+      <% } %>
+    </div>
+    
+    <input 
+      type="password" 
+      id="password" 
+      name="password" 
+      placeholder="password" 
+      value="Hello@123" 
+      required
+    >
+    <br>
+    <br>
+    <input type="submit" id='submit_button' value="Submit">
+    <br>
+    <br>
+  </form>
+  
+</body>
+</html>
